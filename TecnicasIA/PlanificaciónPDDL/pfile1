@@ -1,0 +1,124 @@
+(define (problem practica2-1)
+(:domain practica2)
+(:objects
+	juan - persona
+	maria - persona
+	eva - persona
+	ana - persona
+	pedro - persona
+	A - ciudad
+	B - ciudad
+	C - ciudad
+	D - ciudad
+	E - ciudad
+	)
+(:init
+	(at juan A)
+	(at maria C)
+	(at eva C)
+	(at ana D)
+	(at pedro E)
+	(residente juan)
+	(residente maria)
+	(residente ana)
+	(= (viajes-bono juan) 5)
+	(= (viajes-bono maria) 1)
+	(= (viajes-bono eva) 0)
+	(= (viajes-bono ana) 0)
+	(= (viajes-bono pedro) 4)
+	(= (dinero-persona juan) 50)
+	(= (dinero-persona maria) 15)
+	(= (dinero-persona eva) 13)
+	(= (dinero-persona ana) 18)
+	(= (dinero-persona pedro) 14)
+
+
+	(conexion-bus A B)
+	(conexion-bus A C)
+	(conexion-bus A D)
+
+	(conexion-bus B A)
+	(conexion-bus B C)
+	(conexion-bus B D)
+
+	(conexion-bus C A)
+	(conexion-bus C B)
+	(conexion-bus C D)
+
+	(conexion-bus D A)
+	(conexion-bus D B)
+	(conexion-bus D C)
+
+	(conexion-metro A B)
+	(conexion-metro A C)
+	(conexion-metro A D)
+
+	(conexion-metro B A)
+	(conexion-metro B C)
+	(conexion-metro B D)
+
+	(conexion-metro C A)
+	(conexion-metro C B)
+
+	(conexion-metro D A)
+	(conexion-metro D B)
+
+	(conexion-tren A B)
+	(conexion-tren A C)
+	(conexion-tren A E)
+
+	(conexion-tren B A)
+	(conexion-tren B C)
+	(conexion-tren B E)
+
+	(conexion-tren C A)
+	(conexion-tren C B)
+
+	(conexion-tren E A)
+	(conexion-tren E B)
+
+	(= (velocidad-bus) 1)
+	(= (velocidad-metro) 2)
+	(= (velocidad-tren) 4)
+
+	(= (precio-bonometro) 12)
+	(= (precio-tren) 6)
+	(= (coste-total) 0)
+
+	(= (distancia-ciudades A B) 40)
+	(= (distancia-ciudades A C) 80)
+	(= (distancia-ciudades A D) 120)
+	(= (distancia-ciudades A E) 200)
+
+	(= (distancia-ciudades B A) 40)
+	(= (distancia-ciudades B C) 40)
+	(= (distancia-ciudades B D) 80)
+	(= (distancia-ciudades B E) 80)
+
+	(= (distancia-ciudades C A) 80)
+	(= (distancia-ciudades C B) 40)
+	(= (distancia-ciudades C D) 80)
+	(= (distancia-ciudades C E) 200)
+
+	(= (distancia-ciudades D A) 120)
+	(= (distancia-ciudades D B) 80)
+	(= (distancia-ciudades D C) 40)
+	(= (distancia-ciudades D E) 120)
+
+	(= (distancia-ciudades E A) 200)
+	(= (distancia-ciudades E B) 120)
+	(= (distancia-ciudades E C) 240)
+	(= (distancia-ciudades E D) 160)
+
+
+)
+(:goal (and
+	(at juan E)
+	(at maria E)
+	(at eva D)
+	(at ana A)
+	(at pedro B)
+	))
+
+(:metric  minimize (+ (* 0.8 (total-time)) (* 0.2 (coste-total))))
+)
