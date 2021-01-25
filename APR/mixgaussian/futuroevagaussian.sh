@@ -1,0 +1,1 @@
+./pca+mixgaussian-eva.m ../datos/mnist/train-images-idx3-ubyte.mat.gz ../datos/mnist/train-labels-idx1-ubyte.mat.gz ../datos/mnist/t10k-images-idx3-ubyte.mat.gz ../datos/mnist/t10k-labels-idx1-ubyte.mat.gz ["100"] ["50"] ["1e-4"]
